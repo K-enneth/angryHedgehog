@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Islas
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 2428569791
+    locked: 0
+  - name: Islas
+    uniqueID: 858412619
+    locked: 0
+  - name: Characters
+    uniqueID: 904019105
     locked: 0
