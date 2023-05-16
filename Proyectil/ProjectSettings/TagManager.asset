@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wata
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Islas
+  - 
   - 
   - 
   - 
@@ -41,12 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Water
-    uniqueID: 2428569791
+  - name: Wata
+    uniqueID: 4187716403
     locked: 0
   - name: Islas
-    uniqueID: 858412619
+    uniqueID: 3859511211
     locked: 0
-  - name: Characters
-    uniqueID: 904019105
+  - name: Torres
+    uniqueID: 2656177715
+    locked: 0
+  - name: Player
+    uniqueID: 444870753
     locked: 0
