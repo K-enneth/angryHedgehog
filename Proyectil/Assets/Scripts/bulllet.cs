@@ -12,6 +12,8 @@ public class bulllet : MonoBehaviour
     Vector3 worldPosition;
     Vector3 shootDirection;
     [SerializeField] private int BulletCount = 2;
+    public GameObject canvasWin;
+    
 
 
 
@@ -42,6 +44,7 @@ public class bulllet : MonoBehaviour
                rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
                BulletCount = BulletCount - 1;
                Debug.Log(BulletCount);
+             
            }
            else if (BulletCount == 2)
            {
@@ -51,6 +54,9 @@ public class bulllet : MonoBehaviour
                rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
                BulletCount = BulletCount - 1;
                Debug.Log(BulletCount);
+               
+               
+               
            }
            else if (BulletCount == 1)
            {
@@ -60,11 +66,12 @@ public class bulllet : MonoBehaviour
                rb.velocity = new Vector2(worldPosition.x * 5, worldPosition.y * 5);
                BulletCount = BulletCount - 1;
                Debug.Log(BulletCount);
+               
            }
 
 
 
-           if (BulletCount == 0)
+           if ((BulletCount == 0))
            {
                Debug.Log("GameOver");
            }

@@ -1,46 +1,53 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class DestroyTower : MonoBehaviour
 {
     public GameObject[] towers;
-    // Start is called before the first frame update
+    public int numeroDeTorres = 3;
+    public int torresDerribadas;
+    public GameObject canvasWin;
 
     private void Start()
     {
         
         towers = GameObject.FindGameObjectsWithTag("Tower");
         Debug.Log(towers);
+        canvasWin.SetActive(false);
         
     }
 
     void Update()
     {
-        
+
         CheckWin();
-        
-        
+
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision2d)
+
+    
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(collision2d.gameObject);
+        if (other.CompareTag("Tower"))
+        {
+            Debug.Log("torre derribada");
+            torresDerribadas++;
+        } 
+        
+        Destroy(other.gameObject);
+            
         
     }
 
-    private void CheckWin()
+    public void CheckWin()
     {
+        
+            if (torresDerribadas== numeroDeTorres)
+                    Debug.Log("Ganaste");
+                   
 
-        for (int i = 0; i < towers.Length; i++)
-        {
-            if (towers[i] != isActiveAndEnabled)
-            {
-                Debug.Log("Ganaste");
-            }
-        }
         
         
     }
