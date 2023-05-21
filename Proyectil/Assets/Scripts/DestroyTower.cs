@@ -5,7 +5,7 @@ public class DestroyTower : MonoBehaviour
 {
     public GameObject[] towers;
     public int numeroDeTorres = 3;
-    public int torresDerribadas;
+    public int torresDerribadas=0;
     public GameObject canvasWin;
 
     private void Start()
@@ -36,9 +36,11 @@ public class DestroyTower : MonoBehaviour
             torresDerribadas++;
         } 
         
+    }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
         Destroy(other.gameObject);
-            
-        
     }
 
     public void CheckWin()
