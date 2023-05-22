@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 14909214}
   - component: {fileID: 14909213}
   - component: {fileID: 14909212}
+  - component: {fileID: 14909215}
   m_Layer: 5
   m_Name: NextLevel
   m_TagString: Untagged
@@ -340,7 +341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 14909213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 14909215}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SelectLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &14909213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +392,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14909210}
   m_CullTransparentMesh: 1
+--- !u!114 &14909215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14909210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b0590b66b2b243aaf105214ff3999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneTo: 1
 --- !u!1 &41061550
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +699,7 @@ GameObject:
   - component: {fileID: 135907056}
   m_Layer: 0
   m_Name: BALA (1)
-  m_TagString: Untagged
+  m_TagString: BlackBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &390793867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1652,7 +1678,7 @@ GameObject:
   - component: {fileID: 1154380168}
   m_Layer: 0
   m_Name: BALA
-  m_TagString: Untagged
+  m_TagString: BlackBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2464,7 +2490,7 @@ GameObject:
   - component: {fileID: 1993962281}
   m_Layer: 0
   m_Name: BALA (2)
-  m_TagString: Untagged
+  m_TagString: RedBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

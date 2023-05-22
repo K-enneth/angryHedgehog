@@ -1,20 +1,26 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class bulllet : MonoBehaviour
 {
     public GameObject[] bullets;
-    
-    
+
+
     private Rigidbody2D rb;
     Vector3 worldPosition;
     Vector3 shootDirection;
     [SerializeField] private int BulletCount;
     public GameObject canvasWin;
-    
+    public GameObject canvasLose;
+    public TMP_Text textoScore;
+    public int i;
+    [SerializeField] private int bulletSpeed;
+    [SerializeField] public int score;
 
+   
 
 
     void Update()
@@ -30,72 +36,60 @@ public class bulllet : MonoBehaviour
         }
     }
 
+
+
+    void Disparo()
+    {
+        if (bullets[i].gameObject.CompareTag("GreenBullet"))
+        {
+            Debug.Log("verde");
+            bulletSpeed = 2;
+        }
+        if (bullets[i].gameObject.CompareTag("RedBullet"))
+        {
+            Debug.Log("rojo");
+            bulletSpeed = 5;
+        }
+        if (bullets[i].gameObject.CompareTag("BlackBullet"))
+        {
+            Debug.Log("negro");
+            bulletSpeed = 3;
+        }
+            
+        
+        
+        worldPosition = worldPosition - transform.position;
+        float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
+        rb = bullets[i].GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
+        Debug.Log("numerodetorres" + i);
+
+        i++;
+        score = (BulletCount - i+1)* 2500;
+
+        textoScore.text = score.ToString();
+
+
+
+
+        if (i == BulletCount)
+        {
+            StartCoroutine(WaitForLoose());
+            
+
+        }
+    }
+
+    IEnumerator WaitForLoose()
+    {
+        yield return new WaitForSeconds(3f);
+        Debug.Log("GameOver");
+    }
+
+}
+
+
    
-
-   void Disparo()
-   {
-       {
-           Debug.Log("si entra solo no sirvo");
-           
-           worldPosition = worldPosition - transform.position;
-           float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-
-           for (int i = BulletCount; i <= 0; i--)
-           {
-              
-               rb = bullets[i].GetComponent<Rigidbody2D>();
-               rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
-               
-               Debug.Log(BulletCount);
-               
-               Debug.Log("si entre solo no sirvox2");
-           }
-/*
-           if (BulletCount == 3)
-           {
-               worldPosition = worldPosition - transform.position;
-               float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-               rb = bullets[0].GetComponent<Rigidbody2D>();
-               rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
-               BulletCount = BulletCount - 1;
-               Debug.Log(BulletCount);
-             
-           }
-           else if (BulletCount == 2)
-           {
-               worldPosition = worldPosition - transform.position;
-               float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-               rb = bullets[1].GetComponent<Rigidbody2D>();
-               rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
-               BulletCount = BulletCount - 1;
-               Debug.Log(BulletCount);
-               
-               
-               
-           }
-           else if (BulletCount == 1)
-           {
-               worldPosition = worldPosition - transform.position;
-               float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-               rb = bullets[2].GetComponent<Rigidbody2D>();
-               rb.velocity = new Vector2(worldPosition.x * 5, worldPosition.y * 5);
-               BulletCount = BulletCount - 1;
-               Debug.Log(BulletCount);
-               
-           }
-
-
-
-           if ((BulletCount == 0))
-           {
-               Debug.Log("GameOver");
-               */
-           }
-       }
-
-
-
-   }
 
    
 
