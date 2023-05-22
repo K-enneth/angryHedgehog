@@ -45,13 +45,13 @@ public class DestroyTower : MonoBehaviour
 
     public void CheckWin()
     {
-        
-            if (torresDerribadas== numeroDeTorres)
-                    Debug.Log("Ganaste");
-                   
 
-        
-        
+        if (torresDerribadas == numeroDeTorres)
+        {
+            Debug.Log("Ganaste");
+            canvasWin.SetActive(true);
+        }
+      
     }
 
     

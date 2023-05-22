@@ -11,7 +11,7 @@ public class bulllet : MonoBehaviour
     private Rigidbody2D rb;
     Vector3 worldPosition;
     Vector3 shootDirection;
-    [SerializeField] private int BulletCount = 2;
+    [SerializeField] private int BulletCount;
     public GameObject canvasWin;
     
 
@@ -35,7 +35,22 @@ public class bulllet : MonoBehaviour
    void Disparo()
    {
        {
+           Debug.Log("si entra solo no sirvo");
+           
+           worldPosition = worldPosition - transform.position;
+           float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
 
+           for (int i = BulletCount; i <= 0; i--)
+           {
+              
+               rb = bullets[i].GetComponent<Rigidbody2D>();
+               rb.velocity = new Vector2(worldPosition.x * 2, worldPosition.y * 2);
+               
+               Debug.Log(BulletCount);
+               
+               Debug.Log("si entre solo no sirvox2");
+           }
+/*
            if (BulletCount == 3)
            {
                worldPosition = worldPosition - transform.position;
@@ -74,6 +89,7 @@ public class bulllet : MonoBehaviour
            if ((BulletCount == 0))
            {
                Debug.Log("GameOver");
+               */
            }
        }
 
@@ -82,4 +98,4 @@ public class bulllet : MonoBehaviour
    }
 
    
-}
+
