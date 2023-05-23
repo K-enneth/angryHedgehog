@@ -13,14 +13,18 @@ public class bulllet : MonoBehaviour
     Vector3 worldPosition;
     Vector3 shootDirection;
     [SerializeField] private int BulletCount;
-    public GameObject canvasWin;
     public GameObject canvasLose;
-    public TMP_Text textoScore;
+    public TMP_Text textoScoreWin;
+    public TMP_Text textoScoreLose;
     public int i;
     [SerializeField] private int bulletSpeed;
     [SerializeField] public int score;
-
    
+
+    private void Start()
+    {
+        canvasLose.SetActive(false);
+    }
 
 
     void Update()
@@ -31,6 +35,7 @@ public class bulllet : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+           
             Disparo();
 
         }
@@ -39,6 +44,7 @@ public class bulllet : MonoBehaviour
 
 
     void Disparo()
+    
     {
         if (bullets[i].gameObject.CompareTag("GreenBullet"))
         {
@@ -67,7 +73,8 @@ public class bulllet : MonoBehaviour
         i++;
         score = (BulletCount - i+1)* 2500;
 
-        textoScore.text = score.ToString();
+        textoScoreWin.text = score.ToString();
+        textoScoreLose.text = score.ToString();
 
 
 
@@ -84,6 +91,7 @@ public class bulllet : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         Debug.Log("GameOver");
+        canvasLose.SetActive(true);
     }
 
 }

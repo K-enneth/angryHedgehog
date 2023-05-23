@@ -10,7 +10,7 @@ public class DestroyTower : MonoBehaviour
 
     private void Start()
     {
-        
+        Time.timeScale = 1;
         towers = GameObject.FindGameObjectsWithTag("Tower");
         Debug.Log(towers);
         canvasWin.SetActive(false);
@@ -50,6 +50,8 @@ public class DestroyTower : MonoBehaviour
         {
             Debug.Log("Ganaste");
             canvasWin.SetActive(true);
+            Time.timeScale = 0;
+
         }
       
     }
