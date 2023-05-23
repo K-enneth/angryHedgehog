@@ -61,6 +61,11 @@ public class bulllet : MonoBehaviour
             Debug.Log("negro");
             bulletSpeed = 3;
         }
+        if (bullets[i].gameObject.CompareTag("PurpleBullet"))
+                {
+                    Debug.Log("moradit");
+                    bulletSpeed = 7;
+                }
             
         
         
@@ -89,7 +94,7 @@ public class bulllet : MonoBehaviour
 
     IEnumerator WaitForLoose()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         Debug.Log("GameOver");
         canvasLose.SetActive(true);
     }
