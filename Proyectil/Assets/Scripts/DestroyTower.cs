@@ -33,9 +33,10 @@ public class DestroyTower : MonoBehaviour
     {
         if (other.CompareTag("Tower"))
         {
-            splash.Play();
+           
             Debug.Log("torre derribada");
             torresDerribadas++;
+            splash.Play();
         } 
         
     }

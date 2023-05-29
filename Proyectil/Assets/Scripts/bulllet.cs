@@ -19,6 +19,7 @@ public class bulllet : MonoBehaviour
     public int i;
     [SerializeField] private int bulletSpeed;
     [SerializeField] public int score;
+    [SerializeField] public Camera cam;
    
 
     private void Start()
@@ -50,24 +51,24 @@ public class bulllet : MonoBehaviour
     {
         if (bullets[i].gameObject.CompareTag("GreenBullet"))
         {
-            Debug.Log("verde");
+          
             bulletSpeed = 2;
         }
         if (bullets[i].gameObject.CompareTag("RedBullet"))
         {
-            Debug.Log("rojo");
+           
             bulletSpeed = 5;
         }
         if (bullets[i].gameObject.CompareTag("BlackBullet"))
         {
-            Debug.Log("negro");
+           
             bulletSpeed = 3;
         }
-        if (bullets[i].gameObject.CompareTag("PurpleBullet"))
-                {
-                    Debug.Log("moradit");
-                    bulletSpeed = 7;
-                }
+        if (bullets[i].gameObject.CompareTag("PurpleBullet")) 
+        { 
+          
+            bulletSpeed = 7;
+        }
             
         
         
@@ -75,7 +76,13 @@ public class bulllet : MonoBehaviour
         float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
         rb = bullets[i].GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
-        Debug.Log("numerodetorres" + i);
+        while (bullets[i].gameObject != null)
+        {
+            cam.transform.Translate(new Vector3(bullets[i].transform.position.x
+            ,bullets[i].transform.position.y ,0));
+        }
+         
+      
 
         i++;
         score = (BulletCount - i + 1) * 2500 + 3000;
@@ -97,12 +104,14 @@ public class bulllet : MonoBehaviour
     IEnumerator WaitForLoose()
     {
         yield return new WaitForSeconds(4f);
-        Debug.Log("GameOver");
         Time.timeScale = 0;
+        score = 0;
         canvasLose.SetActive(true);
     }
 
 }
+
+
 
 
    

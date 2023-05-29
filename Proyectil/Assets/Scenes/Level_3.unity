@@ -4919,6 +4919,7 @@ MonoBehaviour:
   numeroDeTorres: 13
   torresDerribadas: 0
   canvasWin: {fileID: 390793866}
+  splash: {fileID: 0}
 --- !u!61 &2028289013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5197,7 +5198,7 @@ PrefabInstance:
       objectReference: {fileID: 782276038}
     - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
       propertyPath: BulletCount
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
       propertyPath: textoScoreWin
