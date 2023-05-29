@@ -76,7 +76,7 @@ public class bulllet : MonoBehaviour
         Debug.Log("numerodetorres" + i);
 
         i++;
-        score = (BulletCount - i+1)* 2500;
+        score = (BulletCount - i + 1) * 2500 + 3000;
 
         textoScoreWin.text = score.ToString();
         textoScoreLose.text = score.ToString();
@@ -96,6 +96,7 @@ public class bulllet : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         Debug.Log("GameOver");
+        Time.timeScale = 0;
         canvasLose.SetActive(true);
     }
 
