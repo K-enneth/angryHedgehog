@@ -49,8 +49,9 @@ public class DestroyTower : MonoBehaviour
         if (torresDerribadas == numeroDeTorres)
         {
             Debug.Log("Ganaste");
-            canvasWin.SetActive(true);
             Time.timeScale = 0;
+            canvasWin.SetActive(true);          
+            
 
         }
       
