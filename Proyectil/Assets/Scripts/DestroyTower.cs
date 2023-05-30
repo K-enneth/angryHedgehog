@@ -59,7 +59,7 @@ public class DestroyTower : MonoBehaviour
             canvasWin.SetActive(true); 
             Time.timeScale = 0;
             win.Play();
-            bulllet.canShoot = false;
+           
 
         }
       

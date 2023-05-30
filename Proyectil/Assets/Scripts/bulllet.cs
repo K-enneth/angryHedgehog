@@ -14,20 +14,19 @@ public class bulllet : MonoBehaviour
     Vector3 shootDirection;
     [SerializeField] private int BulletCount;
     public GameObject canvasLose;
+    public GameObject canvasWin;
     public TMP_Text textoScoreWin;
     public TMP_Text textoScoreLose;
     public int i;
-    [SerializeField] private float bulletSpeed;
+    [SerializeField] private int bulletSpeed;
     [SerializeField] public int score;
-
-    public bool canShoot;
-   // [SerializeField] public Camera cam;
+    [SerializeField] public AudioSource sad;
+    [SerializeField] public AudioSource gun;
    
 
     private void Start()
     {
         canvasLose.SetActive(false);
-        canShoot = true;
     }
 
 
@@ -39,41 +38,32 @@ public class bulllet : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-           
+            gun.Play();
             Disparo();
-
         }
     }
     
-   
-
 
 
     void Disparo()
     
     {
-        if (canShoot)
+        if (bullets[i].gameObject.CompareTag("GreenBullet"))
         {
-            if (bullets[i].gameObject.CompareTag("GreenBullet"))
-            {
-          
-                bulletSpeed = 3;
-            }
-            if (bullets[i].gameObject.CompareTag("RedBullet"))
-            {
-           
-                bulletSpeed = 5;
-            }
-            if (bullets[i].gameObject.CompareTag("BlackBullet"))
-            {
-           
-                bulletSpeed = 3;
-            }
-            if (bullets[i].gameObject.CompareTag("PurpleBullet")) 
-            { 
-          
-                bulletSpeed = 7;
-            }
+            bulletSpeed = 2;
+        }
+        if (bullets[i].gameObject.CompareTag("RedBullet"))
+        {
+            bulletSpeed = 5;
+        }
+        if (bullets[i].gameObject.CompareTag("BlackBullet"))
+        {
+            bulletSpeed = 3;
+        }
+        if (bullets[i].gameObject.CompareTag("PurpleBullet"))
+        {
+            bulletSpeed = 7;
+        }
             
         
         
@@ -100,18 +90,20 @@ public class bulllet : MonoBehaviour
     IEnumerator WaitForLoose()
     {
         yield return new WaitForSeconds(4f);
-        Time.timeScale = 0;
-        score = 0;
-        canvasLose.SetActive(true);
-        canShoot = false;
+        
+        Debug.Log("GameOver");
+        if (canvasWin.activeInHierarchy == false)
+        {
+            Time.timeScale = 0;
+            canvasLose.SetActive(true);
+            if (!sad.isPlaying)
+            {
+                sad.Play();
+            }
+        }
+        
+
+
     }
 
 }
-
-
-
-
-   
-
-   
-
