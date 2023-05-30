@@ -9,7 +9,7 @@ public class DestroyTower : MonoBehaviour
     public GameObject canvasWin;
     public AudioSource splash;
     public AudioSource win;
-
+    public bulllet bulllet;
     private void Start()
     {
         Time.timeScale = 1;
@@ -59,7 +59,8 @@ public class DestroyTower : MonoBehaviour
             canvasWin.SetActive(true); 
             Time.timeScale = 0;
             win.Play();
-            
+            bulllet.canShoot = false;
+
         }
       
     }

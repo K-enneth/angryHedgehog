@@ -17,14 +17,17 @@ public class bulllet : MonoBehaviour
     public TMP_Text textoScoreWin;
     public TMP_Text textoScoreLose;
     public int i;
-    [SerializeField] private int bulletSpeed;
+    [SerializeField] private float bulletSpeed;
     [SerializeField] public int score;
-    [SerializeField] public Camera cam;
+
+    public bool canShoot;
+   // [SerializeField] public Camera cam;
    
 
     private void Start()
     {
         canvasLose.SetActive(false);
+        canShoot = true;
     }
 
 
@@ -49,50 +52,49 @@ public class bulllet : MonoBehaviour
     void Disparo()
     
     {
-        if (bullets[i].gameObject.CompareTag("GreenBullet"))
+        if (canShoot)
         {
+            if (bullets[i].gameObject.CompareTag("GreenBullet"))
+            {
           
-            bulletSpeed = 2;
-        }
-        if (bullets[i].gameObject.CompareTag("RedBullet"))
-        {
+                bulletSpeed = 3;
+            }
+            if (bullets[i].gameObject.CompareTag("RedBullet"))
+            {
            
-            bulletSpeed = 5;
-        }
-        if (bullets[i].gameObject.CompareTag("BlackBullet"))
-        {
+                bulletSpeed = 5;
+            }
+            if (bullets[i].gameObject.CompareTag("BlackBullet"))
+            {
            
-            bulletSpeed = 3;
-        }
-        if (bullets[i].gameObject.CompareTag("PurpleBullet")) 
-        { 
+                bulletSpeed = 3;
+            }
+            if (bullets[i].gameObject.CompareTag("PurpleBullet")) 
+            { 
           
-            bulletSpeed = 7;
-        }
+                bulletSpeed = 7;
+            }
             
         
         
-        worldPosition = worldPosition - transform.position;
-        float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-        rb = bullets[i].GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
-        while (bullets[i].gameObject != null)
-        {
-            cam.transform.Translate(new Vector3(bullets[i].transform.position.x
-            ,bullets[i].transform.position.y ,0));
+            worldPosition = worldPosition - transform.position;
+            float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
+            rb = bullets[i].GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
+            /*while (bullets[i].gameObject != null)
+            {
+                cam.transform.Translate(new Vector3(bullets[i].transform.position.x
+                ,bullets[i].transform.position.y ,0));
+            }*/
+            
+
+            i++;
+            score = (BulletCount - i + 1) * 2500 + 3000;
+
+            textoScoreWin.text = score.ToString();
+            textoScoreLose.text = score.ToString();
         }
-         
-      
-
-        i++;
-        score = (BulletCount - i + 1) * 2500 + 3000;
-
-        textoScoreWin.text = score.ToString();
-        textoScoreLose.text = score.ToString();
-
-
-
-
+        
         if (i == BulletCount)
         {
             StartCoroutine(WaitForLoose());
@@ -107,6 +109,7 @@ public class bulllet : MonoBehaviour
         Time.timeScale = 0;
         score = 0;
         canvasLose.SetActive(true);
+        canShoot = false;
     }
 
 }
