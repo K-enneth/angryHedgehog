@@ -72,20 +72,19 @@ public class bulllet : MonoBehaviour
         rb = bullets[i].GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
         i++;
-        score = (BulletCount - i + 1) * 2500 + 3000;
 
-        textoScoreWin.text = score.ToString();
-        textoScoreLose.text = score.ToString();
-
-
-
-
-        if (i == BulletCount)
+        if(i != BulletCount)
         {
-            StartCoroutine(WaitForLoose());
-            
-
+            score = (BulletCount - i + 1) * 2500 + 3000;
+            textoScoreWin.text = score.ToString();
+            textoScoreLose.text = score.ToString();
         }
+        else
+        {
+            gun.volume = 0;
+            StartCoroutine(WaitForLoose());
+        }
+       
     }
 
     IEnumerator WaitForLoose()
