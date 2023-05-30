@@ -77,30 +77,24 @@ public class bulllet : MonoBehaviour
             
         
         
-            worldPosition = worldPosition - transform.position;
-            float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
-            rb = bullets[i].GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
-            /*while (bullets[i].gameObject != null)
-            {
-                cam.transform.Translate(new Vector3(bullets[i].transform.position.x
-                ,bullets[i].transform.position.y ,0));
-            }*/
-            
+        worldPosition = worldPosition - transform.position;
+        float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
+        rb = bullets[i].GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
+        i++;
 
-            i++;
+        if(i != BulletCount)
+        {
             score = (BulletCount - i + 1) * 2500 + 3000;
-
             textoScoreWin.text = score.ToString();
             textoScoreLose.text = score.ToString();
         }
-        
-        if (i == BulletCount)
+        else
         {
+            gun.volume = 0;
             StartCoroutine(WaitForLoose());
-            
-
         }
+       
     }
 
     IEnumerator WaitForLoose()
