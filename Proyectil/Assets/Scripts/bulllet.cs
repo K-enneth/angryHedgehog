@@ -14,11 +14,14 @@ public class bulllet : MonoBehaviour
     Vector3 shootDirection;
     [SerializeField] private int BulletCount;
     public GameObject canvasLose;
+    public GameObject canvasWin;
     public TMP_Text textoScoreWin;
     public TMP_Text textoScoreLose;
     public int i;
     [SerializeField] private int bulletSpeed;
     [SerializeField] public int score;
+    [SerializeField] public AudioSource sad;
+    [SerializeField] public AudioSource gun;
    
 
     private void Start()
@@ -35,14 +38,11 @@ public class bulllet : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-           
+            gun.Play();
             Disparo();
-
         }
     }
     
-   
-
 
 
     void Disparo()
@@ -50,24 +50,20 @@ public class bulllet : MonoBehaviour
     {
         if (bullets[i].gameObject.CompareTag("GreenBullet"))
         {
-            Debug.Log("verde");
             bulletSpeed = 2;
         }
         if (bullets[i].gameObject.CompareTag("RedBullet"))
         {
-            Debug.Log("rojo");
             bulletSpeed = 5;
         }
         if (bullets[i].gameObject.CompareTag("BlackBullet"))
         {
-            Debug.Log("negro");
             bulletSpeed = 3;
         }
         if (bullets[i].gameObject.CompareTag("PurpleBullet"))
-                {
-                    Debug.Log("moradit");
-                    bulletSpeed = 7;
-                }
+        {
+            bulletSpeed = 7;
+        }
             
         
         
@@ -75,8 +71,6 @@ public class bulllet : MonoBehaviour
         float rotZ = Mathf.Atan2(worldPosition.y, worldPosition.x) * Mathf.Rad2Deg;
         rb = bullets[i].GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(worldPosition.x * bulletSpeed, worldPosition.y * bulletSpeed );
-        Debug.Log("numerodetorres" + i);
-
         i++;
         score = (BulletCount - i + 1) * 2500 + 3000;
 
@@ -97,9 +91,20 @@ public class bulllet : MonoBehaviour
     IEnumerator WaitForLoose()
     {
         yield return new WaitForSeconds(4f);
+        
         Debug.Log("GameOver");
-        Time.timeScale = 0;
-        canvasLose.SetActive(true);
+        if (canvasWin.activeInHierarchy == false)
+        {
+            Time.timeScale = 0;
+            canvasLose.SetActive(true);
+            if (!sad.isPlaying)
+            {
+                sad.Play();
+            }
+        }
+        
+
+
     }
 
 }

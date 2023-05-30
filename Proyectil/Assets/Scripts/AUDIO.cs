@@ -10,7 +10,10 @@ public class AUDIO : MonoBehaviour
     {
         if (other.CompareTag("Tower"))
         {
-            golpe.Play();
+            if (!golpe.isPlaying)
+            {
+                golpe.Play();
+            }
             Debug.Log("GOLPE");
            
         } 

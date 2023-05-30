@@ -8,6 +8,7 @@ public class DestroyTower : MonoBehaviour
     public int torresDerribadas=0;
     public GameObject canvasWin;
     public AudioSource splash;
+    public AudioSource win;
 
     private void Start()
     {
@@ -33,10 +34,13 @@ public class DestroyTower : MonoBehaviour
     {
         if (other.CompareTag("Tower"))
         {
-            
             Debug.Log("torre derribada");
             torresDerribadas++;
-            splash.Play();
+            if (!splash.isPlaying)
+            {
+                splash.Play();
+            }
+            
         } 
         
     }
@@ -51,11 +55,11 @@ public class DestroyTower : MonoBehaviour
 
         if (torresDerribadas == numeroDeTorres)
         {
-            Debug.Log("Ganaste");
-            Time.timeScale = 0;
-            canvasWin.SetActive(true);          
             
-
+            canvasWin.SetActive(true); 
+            Time.timeScale = 0;
+            win.Play();
+            
         }
       
     }
