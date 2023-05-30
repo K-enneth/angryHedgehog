@@ -852,7 +852,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &135907058
 SpriteRenderer:
@@ -2770,7 +2770,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1154380166
 SpriteRenderer:
@@ -3968,7 +3968,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1606119664
 SpriteRenderer:
@@ -4865,7 +4865,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1993962283
 SpriteRenderer:
@@ -5435,6 +5435,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1115980207}
     m_Modifications:
+    - target: {fileID: 4075352517052988633, guid: 509a9fc0b12af4242a009d385c2ee222, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075352517052988636, guid: 509a9fc0b12af4242a009d385c2ee222, type: 3}
       propertyPath: golpe
       value: 

@@ -312,7 +312,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &135907058
 SpriteRenderer:
@@ -4512,6 +4512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7570634642377472279, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7570634642377472282, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
       propertyPath: m_Name
       value: CocoCafMitad
@@ -4577,5 +4581,9 @@ PrefabInstance:
       propertyPath: golpe
       value: 
       objectReference: {fileID: 791741666}
+    - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}

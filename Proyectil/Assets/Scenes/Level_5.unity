@@ -3914,6 +3914,7 @@ Transform:
   - {fileID: 1876023910}
   - {fileID: 1904432396}
   - {fileID: 1493767273}
+  - {fileID: 2122318815}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3971,6 +3972,10 @@ PrefabInstance:
     - target: {fileID: 8243784676050517579, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
       propertyPath: m_Name
       value: CocoVerde (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
@@ -4572,6 +4577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocoVerde
       objectReference: {fileID: 0}
+    - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
 --- !u!4 &1389269623 stripped
@@ -5072,6 +5081,10 @@ PrefabInstance:
     - target: {fileID: 636779919430955893, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636779919430955895, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
@@ -6238,7 +6251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1115980207}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2122318816
 CircleCollider2D:
@@ -6275,7 +6288,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &2122318818
 SpriteRenderer:

@@ -852,7 +852,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &135907058
 SpriteRenderer:
@@ -3173,7 +3173,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &989358381
 SpriteRenderer:
@@ -3800,7 +3800,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1274373908
 SpriteRenderer:
@@ -6268,6 +6268,10 @@ PrefabInstance:
     - target: {fileID: 636779919430955893, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636779919430955895, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
