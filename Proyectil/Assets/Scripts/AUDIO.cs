@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class AUDIO : MonoBehaviour
 {
-   private void OnCollisionEnter(Collision collision)
-   {
-      if (collision.gameObject.CompareTag("Tower"))
-      {
-         Debug.Log("golpe");
-      }
-   }
+    public AudioSource golpe;
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Tower"))
+        {
+            if (!golpe.isPlaying)
+            {
+                golpe.Play();
+            }
+            Debug.Log("GOLPE");
+           
+        } 
+        
+    }
 }
