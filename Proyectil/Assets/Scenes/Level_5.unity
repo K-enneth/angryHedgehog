@@ -2633,6 +2633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocoVerde (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8243784676050517620, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -4044,6 +4048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocoVerde (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8243784676050517620, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -4648,6 +4656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CocoVerde
       objectReference: {fileID: 0}
+    - target: {fileID: 8243784676050517620, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 8243784676050517622, guid: c05fa3cdfa9409d489d4fa9ba7d7e639, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -5105,6 +5117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1115980207}
     m_Modifications:
+    - target: {fileID: 636779919430955881, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 636779919430955892, guid: d40ae00af64d85d4fa865cc78a37fd45, type: 3}
       propertyPath: m_Name
       value: BALA (6)
@@ -5658,6 +5674,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1115980207}
     m_Modifications:
+    - target: {fileID: 7570634642377472273, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 7570634642377472277, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5725,6 +5745,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1115980207}
     m_Modifications:
+    - target: {fileID: 7570634642377472273, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
+      propertyPath: golpe
+      value: 
+      objectReference: {fileID: 470035902}
     - target: {fileID: 7570634642377472277, guid: e8607375b90863f4f9bf7e66523bf770, type: 3}
       propertyPath: m_RootOrder
       value: 4
