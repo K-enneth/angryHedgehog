@@ -1098,7 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165471222}
   - component: {fileID: 165471221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1966,7 +1966,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3402,7 +3402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210296646}
   - component: {fileID: 1210296647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fondo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4454,7 +4454,7 @@ GameObject:
   - component: {fileID: 1718980381}
   - component: {fileID: 1718980383}
   - component: {fileID: 1718980382}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4531,7 +4531,7 @@ GameObject:
   - component: {fileID: 1744632401}
   - component: {fileID: 1744632400}
   - component: {fileID: 1744632399}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

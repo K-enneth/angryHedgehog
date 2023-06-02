@@ -11,6 +11,8 @@ TagManager:
   - RedBullet
   - BlackBullet
   - PurpleBullet
+  - Camera2
+  - Camera3
   layers:
   - Default
   - TransparentFX
@@ -18,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - fondo2
+  - fondo3
+  - fondo1
   - 
   - 
   - 

@@ -13,14 +13,15 @@ public class bulllet : MonoBehaviour
     Vector3 worldPosition;
     Vector3 shootDirection;
     [SerializeField] private int BulletCount;
-    [SerializeField] private int bulletSpeed;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private bool isFar = false;
     
     //CANVAS 
     public GameObject canvasLose;
     public GameObject canvasWin;
     public TMP_Text textoScoreWin;
     public TMP_Text textoScoreLose;
-    [SerializeField] public int score;
+    [SerializeField] public float score;
     
     //COUNTER
     public int i;
@@ -30,6 +31,7 @@ public class bulllet : MonoBehaviour
     
     //CAMERA
     [SerializeField] private Camera cam;
+    [SerializeField] private Camera mainCam;
 
 
 
@@ -80,18 +82,35 @@ public class bulllet : MonoBehaviour
         if (bullets[i].gameObject.CompareTag("GreenBullet"))
         {
             bulletSpeed = 2;
+            if (isFar)
+            {
+                bulletSpeed = 1.2f;
+            }
+            
         }
         if (bullets[i].gameObject.CompareTag("RedBullet"))
         {
             bulletSpeed = 5;
+            if (isFar)
+            {
+                bulletSpeed = 2f;
+            }
         }
         if (bullets[i].gameObject.CompareTag("BlackBullet"))
         {
             bulletSpeed = 3;
+            if (isFar)
+            {
+                bulletSpeed = 1f;
+            }
         }
         if (bullets[i].gameObject.CompareTag("PurpleBullet"))
         {
             bulletSpeed = 7;
+            if (isFar)
+            {
+                bulletSpeed = 3f;
+            }
         }
 
         

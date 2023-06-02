@@ -17,6 +17,7 @@ public class DestroyTower : MonoBehaviour
         Debug.Log(towers);
         canvasWin.SetActive(false);
         
+
     }
 
     void Update()
