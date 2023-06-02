@@ -122,15 +122,15 @@ public class bulllet : MonoBehaviour
         
        
 
-        if(i != BulletCount)
+        if( canvasWin.activeInHierarchy== false)
         {
             score = (BulletCount - i + 1) * 2500 + 3000;
             textoScoreWin.text = score.ToString();
             textoScoreLose.text = score.ToString();
-        }
-        else
-        {
             gun.volume = 0;
+        }
+        if (i == BulletCount)
+        {
             StartCoroutine(WaitForLoose());
         }
        
@@ -138,13 +138,12 @@ public class bulllet : MonoBehaviour
 
     IEnumerator WaitForLoose()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         
-        Debug.Log("GameOver");
         if (canvasWin.activeInHierarchy == false)
         {
-            Time.timeScale = 0;
             canvasLose.SetActive(true);
+            Time.timeScale = 0;
             if (!sad.isPlaying)
             {
                 sad.Play();
