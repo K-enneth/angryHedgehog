@@ -5093,6 +5093,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
+      propertyPath: i
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 541815822}
@@ -5105,6 +5109,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 357869672}
     - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
+      propertyPath: isFar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
       propertyPath: canvasWin
       value: 
       objectReference: {fileID: 667919388}
@@ -5112,6 +5120,10 @@ PrefabInstance:
       propertyPath: canvasLose
       value: 
       objectReference: {fileID: 1706369033}
+    - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
+      propertyPath: BulletCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3280762695328115379, guid: f9eb7429721aeb042b986e80cc2672b3, type: 3}
       propertyPath: textoScoreWin
       value: 

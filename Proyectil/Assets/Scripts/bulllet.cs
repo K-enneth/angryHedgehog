@@ -43,7 +43,7 @@ public class bulllet : MonoBehaviour
     private void Start()
     {
         canvasLose.SetActive(false);
-        i = -1;
+        
     }
 
 
@@ -128,17 +128,21 @@ public class bulllet : MonoBehaviour
             textoScoreWin.text = score.ToString();
             textoScoreLose.text = score.ToString();
             gun.volume = 0;
+            Debug.Log("i" + i);
+            Debug.Log("bulletcount" + BulletCount);
         }
-        if (i == BulletCount)
+        if (i >= BulletCount)
         {
-            StartCoroutine(WaitForLoose());
+            
+            StartCoroutine(WaitForLoose())
+            ;
         }
        
     }
 
     IEnumerator WaitForLoose()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
         
         if (canvasWin.activeInHierarchy == false)
         {
