@@ -13,6 +13,7 @@ TagManager:
   - PurpleBullet
   - Camera2
   - Camera3
+  - Music
   layers:
   - Default
   - TransparentFX
